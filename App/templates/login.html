@@ -52,7 +52,9 @@
               <div class="card-content">
                 <span class="card-title">Login</span>
 
-                <form action="/login" method="POST">
+                <!--<form action="/login" method="POST">-->
+                <form action="{{ url_for('auth_views.login_action') }}" method="POST">
+
                   <div class="input-field">
                     <input name="username" type="text" class="validate">
                     <label for="username">Username</label>
