@@ -1,13 +1,29 @@
 {% extends "layout.html" %}
-{% block title %}Workouts{% endblock %}
-{% block page %}Workouts{% endblock %}
+{% block title %}Workout Remixer App{% endblock %}
+{% block page %}Workout Remixer App{% endblock %}
+
+{% block content %}
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link rel="stylesheet" href="/workspace/MCKS/App/static/style.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <body>
+   <div class="muscle-container">
+    {% for muscle, image_url in all_workouts["Muscles"].items() %}
+    <div class="muscle-item">
+        <img class="muscle-image"src="{{ image_url }}" alt="{{ muscle }}">
+        <p class="muscle-text">{{ muscle }}</p>
+    </div> 
+    {% endfor %}
+   </div>  
+</body>
+ </html>
 
 
- {% block content %}
+{% endblock %}
 
- <h1>WORKOUT</h1>
-
- <!-- {% set muscle_group = 'abdominals' %} -->
-<img src="{{ all_workouts['Muscles'].Biceps }}" alt="Biceps">
-
- {% endblock %}
