@@ -25,16 +25,17 @@ def identify_page():
     
 
 @auth_views.route('/login', methods=['POST'])
+@jwt_required()
 def login_action():
     data = request.form
     token = login(data['username'], data['password'])
-    response = redirect(request.referrer)
     if not token:
         flash('Bad username or password given'), 401
+        return redirect(url_for('login'))  # Redirect back to the login page
     else:
         flash('Login Successful')
-        set_access_cookies(response, token) 
-    return response
+        # Redirect to the '/app' route upon successful login
+        return redirect(url_for('index_views.index_page'))
 
 @auth_views.route('/logout', methods=['GET'])
 def logout_action():
