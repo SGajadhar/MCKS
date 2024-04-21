@@ -12,17 +12,11 @@
 </head>
 <body>
 
+    
 <nav style="background-color: #71A6D2;">
     <div class="nav-wrapper">
         <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
-        <ul id="nav-mobile" class="left">
-            <li><a href="/">Home</a></li>
-            <li><a href="/users">Users Jinja</a></li>
-            {% if is_authenticated %}
-            <li><a href="/identify">Identify</a></li>
-            {% endif %}
-            <li><a href="/static/users">Users JS</a></li>
-        </ul>
+        {% block nav %} {% endblock %}
         {% if is_authenticated %}
         <!-- User Profile Dropdown -->
         <ul id="nav-mobile" class="right">
@@ -49,6 +43,8 @@
         {% endif %}
     </div>
 </nav>
+
+
 <style>
     .navbar-form label {
         color: white !important;

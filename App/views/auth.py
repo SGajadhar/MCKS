@@ -1,11 +1,9 @@
 from flask import Blueprint, render_template, jsonify, request, flash, send_from_directory, flash, redirect, url_for
 from flask_jwt_extended import jwt_required, current_user, unset_jwt_cookies, set_access_cookies
 
-from.index import index_views
+from App.views import index_views
 
-from App.controllers import (
-    login
-)
+
 
 auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
 
@@ -31,7 +29,7 @@ def login_action():
     token = login(data['username'], data['password'])
     if not token:
         flash('Bad username or password given'), 401
-        return redirect(url_for('login'))  # Redirect back to the login page
+        return render_template('login.html')  # Redirect back to the login page
     else:
         flash('Login Successful')
         # Redirect to the '/app' route upon successful login
