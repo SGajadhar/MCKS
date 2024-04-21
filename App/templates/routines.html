@@ -1,0 +1,53 @@
+{% extends "workout.html" %}
+
+{% block title %}Routines{% endblock %}
+
+{% block page %}Routines{% endblock %}
+
+{% block link %}
+
+<ul id="nav-mobile" class="right">
+    <li><a href="/logout"></a></li>
+</ul>
+
+{% endblock %}
+
+{% block styles %}
+
+    td{
+        padding: 2px;
+    }
+
+    .collection .collection-item.active{
+        background-color: #71A6D2;
+    }
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col m3 list-container collection" style="max-height: 88vh;">
+        {% for i in range(1, 11) %}
+            <div class="list-item" id="rout-{{ i }}" style="border: 1px solid black; padding: 10px; margin-bottom: 5px; background-color: #F0F8FF;">
+                <p>Routine {{ i }}</p>
+            </div>
+        {% endfor %}  
+    </div>
+        
+    </div>
+    <!-- <div class="col m3 list-container collection" style="max-height: 88vh;">
+        {% for routine in routines %}
+          <div class="list-item" id="rout-{{routine.id}}" style="border: 1px solid black; padding: 10px; margin-bottom: 5px;  background-color: #F0F8FF;;">
+            <a href="/routines/{{routine.id}}" class="collection-item {% if routine == curr %} active {% endif %}">{{ routine.routineName }}</a>
+          </div>
+        {% endfor %}
+    </div> -->
+
+    <div class="">
+
+    </div>
+
+
+
+
+</div>
+{% endblock %}
