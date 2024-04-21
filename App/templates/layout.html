@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav class="purple">
+<nav class="teal accent-4">
     <div class="nav-wrapper">
         <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
         <ul id="nav-mobile" class="left">
@@ -44,12 +44,15 @@
                 <input placeholder="password"value="bobpass" name="password" type="password" class="validate" required>
                 <label for="password">Password</label>
             </div>
-            <button type="submit" class="btn waves-effect waves-light">Login</button>
+            <button type="submit" class="btn waves-effect waves-light teal darken 3">Login</button>
         </form>
         {% endif %}
     </div>
 </nav>
 <style>
+    body {
+            background-color: teal lighten-5 !important;
+    }
     .navbar-form label {
         color: white !important;
     }
