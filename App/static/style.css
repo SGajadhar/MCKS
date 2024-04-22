@@ -1,0 +1,44 @@
+.muscle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.muscle-item {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 20px; 
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-radius: 5%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.1); /* Updated shadow */;
+}
+
+.cyan.darken-4{
+    background-color: #014144;
+}
+
+.card-panel.teal.lighten-4{
+    background-color: #26a69a;
+}
+
+.muscle-item:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.muscle-image {
+    width: 200px; 
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.muscle-text{
+    font-size: medium;
+    font-weight: bold;   
+}
+
+.view-btn.hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.05); 
+}
+
+
